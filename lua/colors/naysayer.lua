@@ -147,11 +147,17 @@ set(0, "VertSplit",        { fg = colors.line_fg })
 set(0, "MatchParen",       { bg = colors.selection })
 
 -- Search
+
 --   Current match for the last search pattern
 set(0, "CurSearch",        { bg = colors.scale_blue_6, fg = "#eeeeee" })
 
 --   Other occurences
 set(0, "Search",           { fg = colors.scale_blue_8, bg = "#999999" })
+
+-- Diff
+--   - Fugitive stuff 
+set(0, "diffRemoved",        { bg = colors.scale_red_9, fg = "#FFC0B9" })
+set(0, "diffAdded",        { bg = colors.scale_green_9, fg = "#EEF1F8" })
 
 -- Syntax
 set(0, "Comment",          { fg = colors.comment })
