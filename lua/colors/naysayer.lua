@@ -146,6 +146,13 @@ set(0, "ColorColumn",      { bg = colors.highlight })
 set(0, "VertSplit",        { fg = colors.line_fg })
 set(0, "MatchParen",       { bg = colors.selection })
 
+-- Search
+--   Current match for the last search pattern
+set(0, "CurSearch",        { bg = colors.scale_blue_6, fg = "#eeeeee" })
+
+--   Other occurences
+set(0, "Search",           { fg = colors.scale_blue_8, bg = "#999999" })
+
 -- Syntax
 set(0, "Comment",          { fg = colors.comment })
 set(0, "String",           { fg = colors.string })
