@@ -11,26 +11,27 @@ local colors = {
   cyan       = "#A1EFE4",
   violet     = "#AE81FF",
 
-  background = "#062625",
-  gutter     = "#062625",
-  selection  = "#0000ff",
-  text       = "#d0b892",
-  comment    = "#53d549",
-  punctuation= "#8cde94",
-  keyword    = "#ffffff",
-  variable   = "#d0b892",
-  function_  = "#d0b892",
-  string     = "#3ad0b5",
-  constant   = "#87ffde",
-  macro      = "#8cde94",
-  number     = "#87ffde",
-  white      = "#ffffff",
-  error      = "#ff0000",
-  warning    = "#ffaa00",
-  highlight  = "#0b3335",
-  line_fg    = "#126367",
-  lualine_fg = "#12251b",
-  lualine_bg = "#d3b58e",
+  background  = "#062625",
+  gutter      = "#062625",
+  selection   = "#0000ff",
+  text        = "#d0b892",
+  comment     = "#53d549",
+  punctuation = "#8cde94",
+  type        = "#d0b892",
+  keyword     = "#ffffff",
+  variable    = "#d0b892",
+  function_   = "#d0b892",
+  string      = "#3ad0b5",
+  constant    = "#87ffde",
+  macro       = "#8cde94",
+  number      = "#87ffde",
+  white       = "#ffffff",
+  error       = "#ff0000",
+  warning     = "#ffaa00",
+  highlight   = "#0b3335",
+  line_fg     = "#126367",
+  lualine_fg  = "#12251b",
+  lualine_bg  = "#d3b58e",
 
   dimmed_keyword = "#b0b0b0",
   dimmed_function = "#cccccc",
@@ -38,6 +39,7 @@ local colors = {
   dimmed_string = "#2fa89e",
   dimmed_type = "#79c4a6",
 
+  scale_yellow__1 = "#ffea3b",
   scale_yellow_0 = "#f8e3a1",
   scale_yellow_1 = "#f2cc60",
   scale_yellow_2 = "#e3b341",
@@ -149,15 +151,16 @@ set(0, "MatchParen",       { bg = colors.selection })
 -- Search
 
 --   Current match for the last search pattern
-set(0, "CurSearch",        { bg = colors.scale_blue_6, fg = "#eeeeee" })
+set(0, "CurSearch",        { fg = "#000000", bg = colors.scale_yellow__1, })
 
 --   Other occurences
-set(0, "Search",           { fg = colors.scale_blue_8, bg = "#999999" })
+set(0, "Search",           { fg = "#333333", bg = colors.scale_yellow_3 })
 
 -- Diff
 --   - Fugitive stuff 
-set(0, "diffRemoved",        { bg = colors.scale_red_9, fg = "#FFC0B9" })
+set(0, "diffRemoved",      { bg = colors.scale_red_9, fg = "#FFC0B9" })
 set(0, "diffAdded",        { bg = colors.scale_green_9, fg = "#EEF1F8" })
+set(0, "diffLine",         { bg = colors.scale_pink_7, fg = "#aaaaaa" })
 
 -- Syntax
 set(0, "Comment",          { fg = colors.comment })
@@ -169,7 +172,7 @@ set(0, "Identifier",       { fg = colors.variable })
 set(0, "Function",         { fg = colors.function_ })
 set(0, "Statement",        { fg = colors.keyword })
 set(0, "Keyword",          { fg = colors.keyword })
-set(0, "Type",             { fg = colors.punctuation })
+set(0, "Type",             { fg = colors.type })
 set(0, "PreProc",          { fg = colors.macro })
 set(0, "Special",          { fg = colors.orange })
 set(0, "WarningMsg",       { fg = colors.warning })
@@ -212,6 +215,11 @@ set(0, "@keyword.function", { link = "Keyword" })
 set(0, "@field",          { link = "Identifier" })
 set(0, "@property",       { link = "Identifier" })
 set(0, "@parameter",      { link = "Identifier" })
+
+set(0, "@lsp.type.parameter",      { underline = true })
+
+-- Netrw
+set(0, "netrwMarkFile", { link = "Search" })
 
 return colors
 
