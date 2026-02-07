@@ -15,7 +15,7 @@ local colors = {
   gutter      = "#062625",
   selection   = "#0000ff",
   text        = "#d0b892",
-  comment     = "#53d549",
+  comment     = "#1D8A18",
   punctuation = "#8cde94",
   type        = "#d0b892",
   keyword     = "#ffffff",
@@ -29,6 +29,7 @@ local colors = {
   error       = "#ff0000",
   warning     = "#ffaa00",
   highlight   = "#0b3335",
+  cursor_column   = "#0b5555",
   line_fg     = "#126367",
   lualine_fg  = "#12251b",
   lualine_bg  = "#d3b58e",
@@ -144,7 +145,8 @@ set(0, "Visual",           { bg = colors.selection })
 set(0, "LineNr",           { fg = colors.line_fg, bg = colors.background })
 set(0, "CursorLineNr",     { fg = colors.white, bg = colors.background })
 set(0, "CursorLine",       { bg = colors.highlight })
-set(0, "ColorColumn",      { bg = colors.highlight })
+-- Vertical gutter color
+set(0, "ColorColumn",      { bg = colors.cursor_column })
 set(0, "VertSplit",        { fg = colors.line_fg })
 set(0, "MatchParen",       { bg = colors.selection })
 
@@ -160,6 +162,7 @@ set(0, "Search",           { fg = "#333333", bg = colors.scale_yellow_3 })
 --   - Fugitive stuff 
 set(0, "diffRemoved",      { bg = colors.scale_red_9, fg = "#FFC0B9" })
 set(0, "diffAdded",        { bg = colors.scale_green_9, fg = "#EEF1F8" })
+-- How hunk header is look
 set(0, "diffLine",         { bg = colors.scale_pink_7, fg = "#aaaaaa" })
 
 -- Syntax
